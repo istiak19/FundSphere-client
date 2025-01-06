@@ -23,34 +23,27 @@ const AllCampaign = () => {
             <div className="flex justify-end mb-5">
                 <button onClick={handleSort} className="btn text-white bg-[#F2B33D]">Sort By Donation</button>
             </div>
-            <table className="table table-sm w-full">
-                <thead>
-                    <tr className={`${isDarkMode && '*:text-white'}`}>
-                        <th className="text-sm px-2">Serial</th>
-                        <th className="text-sm px-2">Title</th>
-                        <th className="text-sm px-2">Description</th>
-                        <th className="text-sm px-2">Type</th>
-                        <th className="text-sm px-2">Donation</th>
-                        <th className="text-sm px-2">Deadline</th>
-                        <th className="text-sm px-2">Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        campaigns.map((campaign, idx) => <tr key={campaign._id}>
-                            <th className="px-2">{idx + 1}</th>
-                            <td className="px-2">{campaign.title}</td>
-                            <td className="px-2">{campaign.description}</td>
-                            <td className="px-2">{campaign.type}</td>
-                            <td className="px-2">{campaign.donation} $</td>
-                            <td className="px-2">{campaign.deadline}</td>
-                            <td className="px-2">
-                                <Link to={`/campaign/${campaign._id}`} className="btn">See More</Link>
-                            </td>
-                        </tr>)
-                    }
-                </tbody>
-            </table>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {
+                    campaigns.map(campaign => <div key={campaign._id} className={`card card-compact ${isDarkMode && 'bg-[#1D232A]'}  bg-base-100 shadow-xl border border-red-400`}>
+                        <figure className="h-60 p-4">
+                            <img className="w-full h-full rounded-lg"
+                                src={campaign.image}
+                                alt="Campaign" />
+                        </figure>
+                        <div className="card-body">
+                            <h2 className="card-title">{campaign.title}</h2>
+                            <p>{campaign.type}</p>
+                            <p>{campaign.donation}
+                                $</p>
+                            <p><span className="font-semibold">Deadline:</span> {campaign.deadline}</p>
+                            <div className="card-actions">
+                                <Link to={`/campaign/${campaign._id}`} className="btn w-full  bg-[#F2B33D] text-white">See More</Link>
+                            </div>
+                        </div>
+                    </div>)
+                }
+            </div>
         </div>
     );
 };

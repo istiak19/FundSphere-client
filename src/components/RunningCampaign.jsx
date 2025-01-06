@@ -14,7 +14,7 @@ const RunningCampaign = () => {
 
     return (
         <div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 {
                     campaigns.map(campaign => <div key={campaign._id} className={`card card-compact ${isDarkMode && 'bg-[#1D232A]'}  bg-base-100 shadow-xl border border-red-400`}>
                         <figure className="h-60 p-4">

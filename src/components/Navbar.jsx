@@ -19,11 +19,17 @@ const Navbar = () => {
     }
 
     const links = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/all-campaign'>All Campaign</NavLink></li>
-        <li><NavLink to='/add-campaign'>Add New Campaign</NavLink></li>
-        <li><NavLink to='/my-campaign'>My Campaign</NavLink></li>
-        <li><NavLink to='/my-donations'>My Donations</NavLink></li>
+        <li><NavLink  className={({ isActive }) => (isActive ? "!text-white !font-bold !bg-transparent" : "text-black")} to='/'>Home</NavLink></li>
+        <li><NavLink  className={({ isActive }) => (isActive ? "!text-white !font-bold !bg-transparent" : "text-black")} to='/all-campaign'>All Campaign</NavLink></li>
+        {
+            user && <li><NavLink  className={({ isActive }) => (isActive ? "!text-white !font-bold !bg-transparent" : "text-black")} to='/add-campaign'>Add New Campaign</NavLink></li>
+        }
+        {
+            user && <li><NavLink  className={({ isActive }) => (isActive ? "!text-white !font-bold !bg-transparent" : "text-black")} to='/my-campaign'>My Campaign</NavLink></li>
+        }
+        {
+            user && <li><NavLink  className={({ isActive }) => (isActive ? "!text-white !font-bold !bg-transparent" : "text-black")} to='/my-donations'>My Donations</NavLink></li>
+        }
     </>
 
     return (
