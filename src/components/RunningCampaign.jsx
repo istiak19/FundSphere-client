@@ -25,8 +25,8 @@ const RunningCampaign = () => {
                         <div className="card-body">
                             <h2 className="card-title">{campaign.title}</h2>
                             <p>{campaign.description}</p>
-                            <p><span className="font-semibold">Campaign Type</span>: {campaign.type}</p>
-                            <p><span className="font-semibold">Minimum Donation</span>: {campaign.donation}
+                            <p> {campaign.type}</p>
+                            <p>{campaign.donation}
                                 $</p>
                             <p><span className="font-semibold">Deadline:</span> {campaign.deadline}</p>
                             <div className="card-actions">
