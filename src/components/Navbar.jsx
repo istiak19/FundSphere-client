@@ -57,7 +57,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost text-xl">
+                    <Link to='/' className="text-xl">
                         <img className="h-10" src={logoPic} alt="" />
                     </Link>
                 </div>

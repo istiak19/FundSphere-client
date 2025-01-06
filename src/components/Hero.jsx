@@ -35,7 +35,7 @@ const Hero = () => {
                     <div className="p-4 border-2 border-[#F2B33D] shadow-lg rounded-md">
                         <h3 className="text-xl font-bold mb-2">Startup</h3>
                         <p className="text-gray-600">
-                            Turn your innovative business ideas into reality with community support.
+                            Turn your innovative business ideas reality with community support.
                         </p>
                     </div>
                 </Slide>

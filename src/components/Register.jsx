@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
+import signUpPic from '../assets/Mobile login-pana.png'
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(true)
@@ -65,45 +66,52 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero-content flex-col w-11/12 mx-auto">
-            <div className="text-center lg:text-left">
-                <h1 className="text-3xl font-bold">Create an account</h1>
-            </div>
-            <div className="card w-full max-w-md shrink-0 border-2">
-                <form className="card-body" onSubmit={handleRegister}>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Name</span>
-                        </label>
-                        <input type="text" placeholder="Name" name="name" className="input input-bordered" required />
+        <div className="hero my-10 w-11/12 mx-auto min-h-screen">
+            <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="text-center lg:text-left">
+                    <img className="w-[600px]" src={signUpPic} alt="" />
+                </div>
+                <div className="w-full">
+                    <div className="text-center lg:text-left">
+                        <h1 className="text-3xl text-center mb-2 font-bold">Create an account</h1>
                     </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Photo URL</span>
-                        </label>
-                        <input type="text" placeholder="Photo" name="photo" className="input input-bordered" required />
+                    <div className="card w-full max-w-lg shrink-0 border-2">
+                        <form className="card-body" onSubmit={handleRegister}>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" placeholder="Name" name="name" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <input type="text" placeholder="Photo" name="photo" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="email" placeholder="Email" name="email" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control relative">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input type={showPassword ? 'password' : 'text'} name="password" placeholder="Password" className="input input-bordered" required />
+                                <button onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">{showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</button>
+                            </div>
+                            <div className="form-control mt-6">
+                                <button className="btn bg-[#F2B33D] text-white font-bold">Register</button>
+                            </div>
+                            <p>Already have an account? <Link to='/login' className="text-[#F2B33D] border-b border-orange-300">Login</Link></p>
+                            {
+                                errorMsg && <p className="text-red-500">{errorMsg}</p>
+                            }
+                        </form>
                     </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input type="email" placeholder="Email" name="email" className="input input-bordered" required />
-                    </div>
-                    <div className="form-control relative">
-                        <label className="label">
-                            <span className="label-text">Password</span>
-                        </label>
-                        <input type={showPassword ? 'password' : 'text'} name="password" placeholder="Password" className="input input-bordered" required />
-                        <button onClick={() => setShowPassword(!showPassword)} className="absolute top-14 right-3">{showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</button>
-                    </div>
-                    <div className="form-control mt-6">
-                        <button className="btn bg-[#F2B33D] text-white font-bold">Register</button>
-                    </div>
-                    <p>Already have an account? <Link to='/login' className="text-[#F2B33D] border-b border-orange-300">Login</Link></p>
-                    {
-                        errorMsg && <p className="text-red-500">{errorMsg}</p>
-                    }
-                </form>
+                </div>
             </div>
         </div>
     );
