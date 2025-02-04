@@ -1,6 +1,11 @@
 # FundSphere
 
 
+## Description
+
+
+FundSphere is a crowdfunding platform where users can raise money for various causes by creating and managing campaigns. Users can donate to campaigns, but only campaign creators can modify their own campaigns. The website features a login and registration system with Google authentication, a dark/light theme toggle, and protected routes for campaign management.
+
 ## Live Website
 
 
@@ -10,11 +15,11 @@
 ## Features of my website/project
 
 
-* Login & Register form fill-up or google login then website sign up.
-* User add campaign and modify this campaign.
-* User add campaign modify but other user add campaign not modify.
-* User donation this campaign.
-* This website dark/light theme add.
+* User Authentication – Secure login and registration with email/password or Google authentication.
+* Campaign Management – Users can create, modify, and delete their own campaigns, while others can only donate.
+* Donation System – Users can donate to active campaigns, helping fund various causes.
+* Dark/Light Mode – Users can switch between dark and light themes for a better user experience.
+* Protected Routes – Certain pages, like campaign management and donations, are only accessible to logged-in users.
 
 
 ## npm packages I have used
